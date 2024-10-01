@@ -1,7 +1,27 @@
-
 # To-Do List em React
+
 <br>
 
+## Índice de Conteúdo
+- [Objetivo](#objetivo)
+- [Instalação dos softwares necessários](#instalação-dos-softwares-necessários)
+- [Passo-a-Passo para o desenvolvimento do projeto](#passo-a-passo-para-o-desenvolvimento-do-projeto)
+	- [Passo 01: Instalação do React usando o Vite](#passo-01-instalação-do-react-usando-o-vite)
+	- [Passo 02: Estruturação do projeto](#passo-02-estruturação-do-projeto)
+	- [Passo 03: Criação do código dos componentes e estilizações](#passo-03-criação-do-código-dos-componentes-e-estilizações)
+ 		- [index.css](#indexcss)
+   		- [Componente AddTaskInput](#componente-addtaskinput)
+     	- [Componente DeleteTaskButton](#componente-deletetaskbutton)
+      	- [Componente EditTaskButton](#componente-edittaskbutton)
+      	- [Componente MarkTaskAsCompleteButton](#componente-marktaskascompletebutton)
+      	- [Componente Task](#componente-task)
+      	- [Componente TaskList](#componente-tasklist)
+      	- [App](#app)	
+	- [Passo 04: Execução do projeto](#passo-04-execução-do-projeto)
+- [Resultados alcançados](#resultados-alcançados)
+- [Materiais utilizados para o desenvolvimento](#materiais-utilizados-para-o-desenvolvimento)
+
+<br>
 
 ## Objetivo
 O objetivo desse projeto é permitir que uma pessoa gerencie suas tarefas em um site. O usuário vai conseguir realizar as seguintes ações:
@@ -26,37 +46,55 @@ Antes de começar, você precisará instalar algumas ferramentas básicas para o
 <br>
 
 
-## Passo-a-Passo para o desenvolvimento
+## Passo-a-Passo para o desenvolvimento do projeto
 ### Passo 01: Instalação do React usando o Vite
 Vamos utilizar o vite para instalar o react. Para fazer a instalação, abra seu editor VScode (Visual Studio Code) e abra um novo terminal. Para fazer isso, clique nos três pontos brancos na área superior esquerda da tela e selecione “Terminal” e “New Terminal” ou apenas aperte `Ctrl + Shift + '`.
+
 ![alt text](/public/readme-images/open-terminal.png)
 
+
 Isso vai abrir um terminal na parte inferior do VS Code.
+
 ![alt text](/public/readme-images/terminal-open.png)
 
+
 Depois de aberto o terminal, navegue para a pasta do seu projeto usando o `cd <caminho-do-projeto>`, digite `npm create vite@latest .` e pressione Enter.
+
 ![alt text](/public/readme-images/create-vite.png)
+
 
 Esse comando vai criar o projeto com a versão mais atual do vite. O `.` no final do comando significa que o Vite será configurado no diretório atual, utilizando o nome do diretório como o nome do projeto.
 
 Depois de executado o comando, será pedido para você dar um nome do pacote. Aqui você pode escolher algum nome de sua preferência ou apenas apertar Enter para utilizar o nome já atribuido automaticamente.
+
 ![alt text](/public/readme-images/create-vite-package-name.png)
 
+
 Após ter dado um nome ao pacote e apertado Enter, é a hora de escolher o framework que queremos. Use as teclas de seta para mover para cima e para baixo e aperte Enter na opção desejada. Aqui vamos escolher o React.
+
 ![alt text](/public/readme-images/choose-framework.png)
 
+
 Em seguida, você precisa escolher a variação do framework que foi escolhido, ou seja, do React. Aqui vamos escolher a opção de apenas JavaScript para selecionar a configuração padrão do React com JavaScript. Essa variante usa JavaScript puro.
+
 ![alt text](/public/readme-images/select-variant.png)
 
+
 Depois de escolhido a variante, serão gerados vários arquivos e diretórios na sua pasta atual. Mas ainda não terminamos, precisamos instalar as dependências do projeto. Para isso, digite no terminal o comando `npm install` e pressione Enter.
+
 ![alt text](/public/readme-images/npm-install.png)
 
+
 Pronto, temos nosso projeto. Vamos iniciar o nosso serivor para ver se tudo está funcionando corretamente. Para fazer isso, é só digitar o comando `npm run dev` no terminal e pressionar Enter.
+
 ![alt text](/public/readme-images/npm-run-dev.png)
 
+
 Agora é só acessar o link do localhost que podemos ver uma interface que é criada ao utilizar o vite para a criação do projeto.
+
 ![alt text](/public/readme-images/localhost-link.png)
 ![alt text](/public/readme-images/vite-project-interface.png)
+
 
 Agora podemos começar a trabalhar no nosso projeto.
 
@@ -93,12 +131,44 @@ Agora, em cada componente, nós teremos dois arquivos, um arquivo `index.jsx`, o
 
 
 ### Passo 03: Criação do código dos componentes e estilizações
-Depois de criado cada componente e os arquivos `index.jsx` e `<nome-componente>.css` para cada componente, é a hora de criarmos o código e estilização do nosso projeto. Primeiro, vamos criar a estilização do `index.css`, que é a estilização global do projeto e depois criaremos o código jsx de cada componente e sua estilização.
+Depois de criado cada componente e seus arquivos `index.jsx` e `<nome-componente>.css`, é a hora de criarmos todo o código e estilização do nosso projeto. Primeiro, vamos criar a estilização do `index.css`, que é a estilização global do projeto e depois criaremos o código jsx e a estilização de cada componente.
 
 ##### `index.css`
-![alt text](/public/readme-images/estilizacao-index-css.png)
+```css
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+    --primary-font-color: #235F78;
+    --secondary-font-color: #f0f0f0;
+	--poppins-font: Poppins, PoppinsInitial, sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+	gap: 2rem;
+	background-image: linear-gradient(#575656, #062e3f);
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+button {
+	cursor: pointer;
+}
+```
 
 #### Componente AddTaskInput
+Esse componente representa o input onde o usuário digitará o nome da tarefa e o botão para adicionar a terafa na lista de tarefas.
+
 ##### `index.jsx`
 ```jsx
 import { useState } from 'react';
@@ -173,8 +243,11 @@ export default function AddTaskInput({ onAddTask }) {
 }
 ```
 
+<br>
 
 #### Componente DeleteTaskButton
+Esse componente representa um botão que permitirá deletar uma tarefa.
+
 ##### `index.jsx`
 ```jsx
 import './DeleteTaskButton.css';
@@ -205,18 +278,178 @@ export default function DeleteTaskButton({ onDeleteTask }) {
 }
 ```
 
+<br>
 
 #### Componente EditTaskButton
+Esse componente representa um botão que permitirá editar o texto de uma tarefa.
 
+##### `index.jsx`
+```jsx
+import './EditTaskButton.css';
+
+
+export default function EditTaskButton({ onEditTask }) {
+    return (
+        <button className='edit-button' onClick={onEditTask}>
+            <i className='bi bi-pen'></i>
+        </button>
+    );
+}
+```
+
+##### `EditTaskButton.css`
+```css
+.edit-button {
+    background: none;
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    color: var(--primary-font-color);
+    border-radius: 0.2rem;
+}
+
+.bi-pen {
+    font-size: 1.5em;
+}
+```
+
+<br>
 
 #### Componente MarkTaskAsCompleteButton
+Esse componente representa um checkbox para marcar uma tarefa como concluída.
 
+##### `index.jsx`
+```jsx
+import './MarkTaskAsCompleteButton.css';
+
+
+export default function MarkTaskAsCompleteButton({ task, onToggleComplete }) {
+    return (
+        <input
+        type="checkbox"
+        checked={task.completed}
+        onChange={() => onToggleComplete(task.id)}
+        className='mark-task-as-complete-button'
+        />
+    );
+}
+
+```
+
+##### `MarkTaskAsCompleteButton.css`
+```css
+.mark-task-as-complete-button {
+    background: none;
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    color: var(--primary-font-color);
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+```
+
+<br>
 
 #### Componente Task
+Esse componente representa uma tarefa na lista de tarefas
 
+##### `index.jsx`
+```jsx
+import MarkTaskAsCompleteButton from '/src/components/MarkTaskAsCompleteButton';
+import EditTaskButton from '/src/components/EditTaskButton';
+import DeleteTaskButton from '/src/components/DeleteTaskButton';
+
+import './Task.css';
+
+
+export default function Task({ task, onDeleteTask, onEditTask, onToggleComplete }) {
+    return (
+        <li className='item'>
+            <div className='task-section'>
+                <MarkTaskAsCompleteButton 
+                task={task}
+                onToggleComplete={onToggleComplete}
+                />
+                <p className='task-name'>{task.text}</p>
+            </div>
+
+            <div className='task-section'>
+                <EditTaskButton onEditTask={() => onEditTask(task.id)} />
+                <DeleteTaskButton onDeleteTask={() => onDeleteTask(task.id)} />
+            </div>
+        </li>
+    );
+}
+```
+
+##### `Task.css`
+```css
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background-color: #BBB5B5;
+    border-radius: 0.4rem;
+    font-family: var(--poppins-font);
+}
+
+.task-section {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.task-name {
+    font-size: 1.2em;
+}
+```
+
+<br>
 
 #### Componente TaskList
+Esse componente representa a lista de tarefas, onde as tarefas são organizadas de acordo com sua criação.
 
+##### `index.jsx`
+```jsx
+import './TaskList.css';
+
+import Task from '/src/components/Task';
+
+export default function TaskList({ tasks, onDeleteTask, onEditTask, onToggleComplete }) {
+    return (
+        <ul id='task-list'>
+            {tasks.map((task) => (
+                <Task
+                key={task.id}
+                task={task}
+                onDeleteTask={onDeleteTask}
+                onEditTask={onEditTask}
+                onToggleComplete={onToggleComplete}
+                />
+            ))}
+        </ul>
+    );
+}
+```
+
+##### `TaskList.css`
+```css
+#task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 20rem;
+    max-width: 100%;
+    color: var(--primary-font-color);
+    overflow-y: auto;
+}
+```
+
+<br>
 
 #### App
 O `App.jsx` vai conter o "core" da nossa aplicação, esse arquivo que vai conter os componentes AddTaskInput e o TaskList, e é nesse arquivo que as funções de salvamento no localStorage, adicionar, editar, deletar e marcar tarefa como concluída vão estar. Essa foi a forma que eu resolvi estruturar o projeto, mas há várias outras maneiras que você pode escolher utilizar.
@@ -317,16 +550,18 @@ export default function App() {
 ```
 
 ##### `App.css`
+
 ![alt text](/public/readme-images/arquivo-app-css.png)
 
 
 ### Passo 04: Execução do projeto
-Depois de ter criado todo o código e estilizado ele, temos o nosso projeto completo. Agora é só executar usando o comando `npm run dev` e abrir o link do localhost que aparecer no terminal e usar o site para gerencias suas tarefas.
+Depois de ter criado todo o código dos componentes e estilizado cada componente, temos o nosso projeto completo. Agora é só executar usando o comando `npm run dev` e abrir o link do localhost que aparecer no terminal e usar o site para gerencias suas tarefas.
 
 <br>
 
 ## Resultados alcançados
 Como resultado obtivemos um website de gerenciamento de tarefas, no qual o usuário consegue criar, editar, deletar e marcar tarefas como concluídas.
+
 ![alt text](/public/readme-images/resultado-alcancado.png)
 
 <br>
