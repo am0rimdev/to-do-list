@@ -1,0 +1,31 @@
+.add-task {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#task-input {
+    height: 4rem;
+    width: 90%;
+    padding: 0.6rem;
+    border: none;
+    border-radius: 0.4rem;
+    font-size: 1.4em;
+}
+
+#add-task-button {
+    height: 3.8rem;
+    width: 3.8rem;
+    text-align: center;
+    background-color: var(--primary-font-color);
+    color: var(--secondary-font-color);
+    border: none;
+    border-radius: 0.4rem;
+}
+
+#add-task-button i {
+    font-size: 2em;
+}

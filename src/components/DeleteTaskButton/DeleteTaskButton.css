@@ -1,0 +1,12 @@
+.trash-button {
+    background: none;
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    color: red;
+    border-radius: 0.2rem;
+}
+
+.bi-trash {
+    font-size: 1.5em;
+}

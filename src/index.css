@@ -1,0 +1,29 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+    --primary-font-color: #235F78;
+    --secondary-font-color: #f0f0f0;
+	--poppins-font: Poppins, PoppinsInitial, sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	place-items: center;
+	min-width: 320px;
+	min-height: 100vh;
+	gap: 2rem;
+	background-image: linear-gradient(#575656, #062e3f);
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+button {
+	cursor: pointer;
+}

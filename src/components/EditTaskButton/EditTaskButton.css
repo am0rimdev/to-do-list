@@ -1,0 +1,12 @@
+.edit-button {
+    background: none;
+    border: none;
+    height: 1.5em;
+    width: 1.5em;
+    color: var(--primary-font-color);
+    border-radius: 0.2rem;
+}
+
+.bi-pen {
+    font-size: 1.5em;
+}
