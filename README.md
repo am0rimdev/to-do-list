@@ -452,7 +452,7 @@ export default function TaskList({ tasks, onDeleteTask, onEditTask, onToggleComp
 <br>
 
 #### App
-O `App.jsx` vai conter o "core" da nossa aplicação, esse arquivo que vai conter os componentes AddTaskInput e o TaskList, e é nesse arquivo que as funções de salvamento no localStorage, adicionar, editar, deletar e marcar tarefa como concluída vão estar. Essa foi a forma que eu resolvi estruturar o projeto, mas há várias outras maneiras que você pode escolher utilizar.
+O `App.jsx` vai ser o "core" da nossa aplicação, esse arquivo que vai conter os componentes AddTaskInput e o TaskList, e é nesse arquivo que as funções de salvamento no localStorage, adicionar, editar, deletar e marcar tarefa como concluída vão estar. Essa foi a forma que eu resolvi estruturar o projeto, mas há várias outras maneiras que você pode escolher utilizar.
 
 ##### `App.jsx`
 ```jsx
