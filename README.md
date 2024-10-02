@@ -2,6 +2,15 @@
 
 <br>
 
+## Autores
+- Charles Bernardo Buteri
+- Emilly Júnia Costa Silva
+- Micael Pereira da Silva
+- Nífane Borges Guimarães
+- Vinícius Alves Amorim
+
+<br>
+
 ## Índice de Conteúdo
 - [Objetivo](#objetivo)
 - [Instalação dos softwares necessários](#instalação-dos-softwares-necessários)
@@ -550,8 +559,26 @@ export default function App() {
 ```
 
 ##### `App.css`
+```css
+.app {
+    display: flex;
+    flex-direction: column;
+    height: 46rem;
+    width: 40rem;
+    padding: 4rem 3rem;
+    gap: 4rem;
+    border-radius: 1rem;
+    background-color: #D9D9D9;
+    box-shadow: 0.2em 0.2em 0.5em #1b1b1b;
+}
 
-![alt text](/public/readme-images/arquivo-app-css.png)
+#app-title {
+    position: relative;
+    text-align: center;
+    color: var(--primary-font-color);
+    font-family: var(--poppins-font);
+}
+```
 
 
 ### Passo 04: Execução do projeto
